@@ -65,7 +65,7 @@
                 <section>
                     <ul class="messages">
                         <li ng-repeat="msg in messages | orderBy : 'createdAt' : true" class="clearfix">
-                            <img ng-src="{{users[user.username].profileImageURL}}" alt="profile image"/>
+                            <img ng-src="{{users[msg.username].profileImageURL}}" alt="profile image"/>
                             <p>
                                 <strong>{{msg.username}}:</strong> {{msg.body}}
                             </p>

@@ -1,3 +1,12 @@
+/*
+Github authentication
+Go to github
+Settings
+Applications
+Register new Application
+You'll get the clientID and clientSecret keys to put into github authentication in firebase
+ */
+
 
 angular.module('ChatApp', ['firebase'])
     .constant('firebaseUrl', 'https://info343chatauth.firebaseio.com/')
@@ -5,7 +14,7 @@ angular.module('ChatApp', ['firebase'])
         //create reference to the Firebase
         var rootRef = new Firebase(firebaseUrl);
 
-        //create an authentication service for this firebase
+        //create an authentication service for this firebase - (you can use github)
         var auth = $firebaseAuth(rootRef);
 
         //when the user clicks the signin button...
@@ -24,7 +33,7 @@ angular.module('ChatApp', ['firebase'])
         };
 
         //when the authentication state changes...
-        auth.$onAuth(function(authData) {
+        auth.$onAuth(function(authData) {   //gets called when you've successfully authenticated
             //if we have authentication data
             if (authData) {
                 //get the users object
@@ -78,3 +87,20 @@ angular.module('ChatApp', ['firebase'])
         }; //sendMessage()
 
     }); //ChatController
+
+/*
+You can change firebase rules for who is authorized to read and write
+Server side validation
+
+{
+    "rules": {
+            ".read": "true",
+            ".write": "auth != null",
+            "messages": {
+                "$message": {
+                    "body": {
+                        ".validate": "newData.val().length < 140"
+                    }
+               }
+           }
+ */
