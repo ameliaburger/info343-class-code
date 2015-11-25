@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seattle Traffic</title>
+
+        <meta charset="UTF-8">
+        
+        <!-- Leaflet stylesheet -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css" />
+
+        <!-- your stylesheet -->
+        <link rel="stylesheet" href="css/main.css"/>
+        
+        <!-- page icon -->
+        <link rel="icon" href="img/page-icon.png"/>
+
+    </head>
+    <body>
+
+        <div id="map"></div>
+
+        <!-- legend -->
+        <div id="legend">
+            <h1>Seattle Traffic Cameras</h1>
+            <p><span id="sdot"> </span> by <span style="color: green; class: bold;">SDOT</span>, <span id="wsdot"> </span> by <span style="color: red; class: bold;">WSDOT</span></p>
+            <p>
+                <input type="search" id="traffic-filter-field" class="form-control"
+                       placeholder="type to filter" autofocus/>
+            </p>
+        </div>
+
+        <!-- jQuery library -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+        <!-- Leaflet library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"></script>
+
+        <!-- your script file -->
+        <script src="js/app.js"></script>
+    </body>
+</html>
